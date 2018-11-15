@@ -9,6 +9,7 @@
 // corresponds to an element with the largest value.
 // You may assume size >= 1
 
+//iterates through array, keeps track of the largest element as well as its index
 int indexOfMax(int *a, int size) {
   assert(size >= 1);
   int index = 0;
@@ -22,12 +23,15 @@ int indexOfMax(int *a, int size) {
   return index;
 }
 
+
 // a: an array of ints.  size is how many ints in array
 // Return the index of smallest value.  
 // If more than one element has largest value, 
 // break tie by returning the smallest index that
 // corresponds to an element with the largest value.
 // You may assume size >= 1
+
+//iterates through array, keeps track of the smallest element as well as its index
 int indexOfMin(int *a, int size) {
   assert(size >= 1);
   int index = 0;
@@ -45,6 +49,8 @@ int indexOfMin(int *a, int size) {
 // Return the largest value in the list.
 // This value may be unique, or may occur more than once
 // You may assume size >= 1
+
+//finds maximum value in an array
 int largestValue(int *a, int size) {
   assert(size >= 1);
   int max = a[0];
@@ -59,6 +65,7 @@ int largestValue(int *a, int size) {
 // This value may be unique, or may occur more than once
 // You may assume size >= 1
 
+//finds smallest value in an array
 int smallestValue(int *a, int size) {
   assert(size >= 1);
   int min = a[0];
@@ -73,6 +80,7 @@ int smallestValue(int *a, int size) {
 // Return the sum of all the elements in the array
 // size may be 0 in this case, or non-zero.
 
+//returns the sum of all elements inside an array
 int sum(int *a, int size) {
   int sum = 0;
   for(int i = 0; i < size; i++){
@@ -88,6 +96,7 @@ int sum(int *a, int size) {
 // n is number of elements in src to be copied
 // copy n elements from src to dest.
 
+//copies n elements from second array into first array
 void copyElements(int *dest, int *src, int n) {
   for(int i = 0; i < n; i++){
 	dest[i] = src[i];
@@ -101,6 +110,7 @@ void copyElements(int *dest, int *src, int n) {
 // copy ONLY the elements with odd values from src to dest.
 // return the number of elements that were copied
 
+//iterates through first n elements of the second array, replaces elements in first array with odd elements from the second
 int copyOddOnly(int *dest, int *src, int n) {
   int offset = 0;
   for(int i = 0; i < n; i++){
@@ -123,6 +133,7 @@ int copyOddOnly(int *dest, int *src, int n) {
 // then after a call to multiplePairwise(a,b,product,4), 
 // product will be {3,10,21,36}.
 
+//iterates through two arrays, sets values of third array to multiples of elements in the first two arrays
 void multiplyPairwise(int *a, int *b, int *product, int n) {
   for(int i = 0; i < n; i++){
 	product[i] = a[i]*b[i];
@@ -133,6 +144,8 @@ void multiplyPairwise(int *a, int *b, int *product, int n) {
 // len is the number of elements the array you create should contain
 // you should return a pointer to the new integer array of size len
 // with all of the elements in it set to 0
+
+//creates an array in HEAP, sets each element's value to 0, returns its address
 int* createArray(int len) {
   int* p = new int[len];
   for(int i = 0 ; i < len; i++){
